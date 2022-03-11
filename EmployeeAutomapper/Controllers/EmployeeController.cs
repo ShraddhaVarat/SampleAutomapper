@@ -32,7 +32,7 @@ namespace EmployeeAutomapper.Controllers
             entityDelta.Patch(existingEntity);
 
             // Following mapping incorrectly sets type of updatedModel as EmployeeType.Employee
-            var updatedModel = _mapper.Map<EmployeeModel>(existingEntity);
+            var updatedModel = _mapper.Map(existingEntity, existingModel);
             return Ok(updatedModel);
         }
     }
